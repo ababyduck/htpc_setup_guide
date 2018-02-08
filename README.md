@@ -22,7 +22,7 @@ Steps
 - `yaourt vtop` for a fancy terminal-based process manager (make sure to select vtop, **not** nvtop)
 - `yaourt neofetch` for fancy screenshots
 
-3. **Set up VNC server for remote desktop sharing.** I use my HTPC with a projector, meaning it's a huge pain in the ass to turn it on and do maintenance in my living room. VNC allows me to easily control the HTPC over the network.
+3. **Set up remote desktop sharing with X11VNC.** I use my HTPC with a projector, meaning it's a huge pain in the ass to turn it on and do maintenance in my living room. VNC allows me to easily control the HTPC over the network.
 - Choose a password for VNC logins `x11vnc -storepasswd /etc/x11.pass`
 - Create or download [this init script](files/etc/systemd/system/x11vnc.service) to your systemd services path: `sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/ababyduck/htpc_setup_guide/master/files/etc/systemd/system/x11vnc.service`
 - `sudo systemctl enable x11vnc.service`
@@ -30,11 +30,27 @@ Steps
 
 3a. *Optional:* Reboot and login via VNC before proceeding. I recommend the [RealVNC client](https://www.realvnc.com/en/connect/download/viewer/) for Windows.
 
-4. **Set up mount points with fstab.** If you're not using a separate NAS, you'll want to make sure your storage drives stay mounted.
+4. **Set up mount points with fstab.** If you're not using a separate NAS, you'll want to make sure your storage drives stay mounted in a static location.
 - Create mount points. I store mine in /media/Movies/ and /media/TV/, but you can do whatever you like. e.g. `sudo mkdir -p /media/Movies/`
 - Find the UUID's of your storage drives with `-lsblk -f`
 - Append them to your `/etc/fstab` file and restart. See the last few lines of [my fstab](files/etc/fstab) for an example.
 
 5. **Prepare Kodi for playback.** Kodi is great, but it has a ton of options and they're not always organized very intuitively.
 
--- IN PROGRESS--
+- Launch Kodi
+- Go to Settings (gear icon at the top) > Interface settings > Skin > Get more... > Arctic Zephyr
+- Back out to Settings, then go to Addons > Install from repository > Program add-ons > Artwork Downloader. Install this
+- Back out to Settings, then go to Skin Settings > Home > Customize Home Menu
+- Remove all items except Movies, TV shows, Settings
+- Add a fourth option, label it something like Menu, then go down to Submenu
+- Add four new items to this menu, then "Choose item for menu" for each of them.
+- The four items we want are Kodi Command > Update Video library, Kodi Command > Clean Video Library, Add-on > Program > Artwork Downloader, and Kodi Command > Quit
+- Finally, we'll add our media. Back out to Settings again, then go to Library > Videos... > Add Videos
+- I add sources for TV, Movies, Documentaries, Anime (Series), and Anime (Movies), but this may vary depending on how you organize your media. For movies, pay extra attention to the "Movies are in separate folders that match the movie title" option, or Kodi will arbitrarily assume that the folder you store all of your movies in is actually just one movie. TV shows don't behave this way, because consistency would make things too easy.
+- Finally, back out to the main screen in Kodi. Go to Menu > Update Video Library, then Menu > Artwork Downloader. Both of these may take a while, depending on how many media files you've got stored. Once that's done, you should have a nice clean home screen with Movies, TV Shows, Settings, and our custom Menu, complete with art.
+- Open up the Movies menu, hit the left arrow, then tick "Show plot" to show synapses for selected items.
+- There's a whole lot more you can do in Kodi, but I'm pretty happy with this setup. Feel free to install add addons for streaming services or configure further.
+
+6. **Set up network shares using Samba**
+
+-- IN PROGRESS --
