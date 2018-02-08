@@ -17,8 +17,11 @@ Steps
 
 - `pacman -Sy kodi x11vnc samba git curl wget zsh binutils make` 
 
-2a. *Totally optional and not HTPC-related in any way:*
+2a. *100% optional:*
 - Visit [Oh My Zsh](https://ohmyz.sh/) and copy and paste one of their install strings. Either will work if you grabbed `git`, `zsh`, and either `curl` or `wget` in the previous steps. At the time of writing this, the following works: `sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+- `nano ~/.zshrc` and change the ZSH theme from bobbyrussel to wedisagree. Save and type `source ~/.zshrc` to refresh.
+- Customize your wallpaper and set a nice dark theme. In Antergos, open the Activities menu with your Windows Key, start typing "tweaks" and open up the Tweaks application. Under Appearance, tick Global Dark Theme, then set the application theme to Adwaita-dark. Then open up Terminal and go to Edit > Profile Preferences > Colors. Tick "Use colors from system theme" and set the color palette to Solarized.
+- Install your favorite Chromium Extensions (I use [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm), [uBlock Origin Extra](https://chrome.google.com/webstore/detail/ublock-origin-extra/pgdnlhfefecpicbbihgmbmffkjpaplco), [Privacy Badger](https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp), [Video Speed Controller](https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk), [Don't Fuck With Paste](https://chrome.google.com/webstore/detail/dont-fuck-with-paste/nkgllhigpcljnhoakjkgaieabnkmgdkb), and [Reddit Enhancement Suite](https://chrome.google.com/webstore/detail/reddit-enhancement-suite/kbmfpngjjgdllneeigpgjifpgocmfgmb) on every machine I use.)
 - `yaourt vtop` for a fancy terminal-based process manager (make sure to select vtop, **not** nvtop)
 - `yaourt neofetch` for fancy screenshots
 
