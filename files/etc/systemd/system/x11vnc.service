@@ -1,0 +1,10 @@
+[Unit]
+Description=Start x11vnc at startup.
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/x11vnc -norc -forever -loop -auth guess -rfbauth /etc/x11vnc.pass -rfbport 5900 -allow 192.168.1. -shared -o /var/log/x11vnc.log -noxdamage -repeat
+
+[Install]
+WantedBy=multi-user.target
