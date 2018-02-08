@@ -56,4 +56,11 @@ Steps
 
 6. **Set up network shares using Samba**
 
--- IN PROGRESS --
+- Create /etc/samba/smb.conf, using [this file](files/etc/samba/smb.conf) as a template.
+- `testparm` to make sure there are no typos in the config.
+- `sudo systemctl enable smbd`
+- `sudo systemctl enable smbd`
+
+7. **Begin setting up automation services**
+
+-- IN PROGRESS--
